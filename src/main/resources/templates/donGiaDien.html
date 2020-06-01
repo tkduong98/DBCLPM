@@ -1,9 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:th="http://www.thymeleaf.org"
+<html lang="en" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorate="~{layout/template}">
 <head>
     <meta charset="UTF-8">
     <title>Cấu hình</title>
+    <style>
+        label.error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 <header layout:fragment="header" class="mt-3 ml-2 mr-2">
@@ -11,21 +16,17 @@
         $(document).ready(function () {
             showDonGia();
         });
+        console.log(jQuery.validator)
+        jQuery.validator.addMethod("checkChar", function (value, element, param) {
+            return value.match(new RegExp("." + param + "$"));
+        });
 
-        function editDonGia(idDonGia) {
-            var giaMoi =$.trim($("#gia").val());
-            var ghiChuMoi = $.trim($("#ghiChu").val());
-            $.ajax({
-                url: "/cap-nhat-don-gia",
-                type: "POST",
-                dataType: "json",
-                data: {
-                    "idDonGia": idDonGia,
-                    "giaMoi": giaMoi,
-                    "ghiChuMoi": ghiChuMoi
-                }
+        function showUpdateModal() {
+            $('#bang_don_gia_dien').find('tr').click(function () {
+                var idDonGia = $(this).find('td').eq(1).text();
+                $("#ID_donGia_update").html(idDonGia);
             });
-            location.reload();
+
         }
 
         function showDonGia() {
@@ -34,15 +35,22 @@
                 type: "POST",
                 dataType: "json",
                 success: function (data) {
+                    if (data.length >= 7) {
+                        $("#btn_them_don_gia").attr("disabled", true);
+                    } else {
+                        $("#btn_them_don_gia").attr("disabled", false);
+                    }
                     var contentString;
                     for (var i = 0; i < data.length; i++) {
+                        var index = i + 1;
                         contentString = contentString
                             + '<tr role="row" class="odd">'
+                            + '<td style="padding: 0px 0px 0px 25px">' + index + '</td>'
                             + '<td style="padding: 0px 0px 0px 17px">' + data[i][0] + '</td>'
-                            + '<td style="padding: 0px 0px 0px 0px"><textarea cols="10" rows="1" id="gia">' + data[i][1] + '</textarea></td>'
-                            + '<td style="padding: 6px 0px 0px 0px"><textarea cols="50" rows="2" id="ghiChu">' + data[i][2] + '</textarea></td>'
-                            + '<td style="padding: 0px 0px 0px 0px"><button data-toggle="tooltip" title="Update" class="btn btn-info center-block ml-1" onclick="editDonGia('+data[i][0]+')" style="padding: 3px 6px 3px 6px; border-radius: 54%;"><i class="icon-pencil"></i></button>' +
-                            '<a data-toggle="tooltip" title="Remove"><button data-toggle="modal" data-target="#confirmModalDeleteCustomer"  onclick="deleteDonGia('+data[i][0]+')" class="btn btn-danger center-block ml-1" style="padding: 3px 6px 3px 6px; border-radius: 54%;"><i class="icon-trash"></i></button></a></td>'
+                            + '<td style="padding: 0px 0px 0px 0px"><label id="gia" readonly>' + data[i][1] + '</label></td>'
+                            + '<td style="padding: 6px 0px 0px 0px"><label id="ghiChu" readonly>' + data[i][2] + '</label></td>'
+                            + '<td style="padding: 0px 0px 0px 0px"><a data-toggle="tooltip" title="Update"><button data-toggle="modal" data-target="#updateModal" class="btn btn-info center-block ml-1" onclick="showUpdateModal()" style="padding: 3px 6px 3px 6px; border-radius: 54%;"><i class="icon-pencil"></i></button></a>' +
+                            '<a data-toggle="tooltip" title="Remove"><button data-toggle="modal" data-target="#confirmModalDelete"  onclick="showConfirmDelete()" class="btn btn-danger center-block ml-1" style="padding: 3px 6px 3px 6px; border-radius: 54%;"><i class="icon-trash"></i></button></a></td>'
                             + '</tr>';
                     }
                     $("#bang_don_gia_dien").html(contentString);
@@ -52,37 +60,128 @@
             });
         }
 
-        function addDonGia() {
-            var gia = $('#addGia_input').val().trim();
-            var ghiChu = $.trim($("#addGhiChu-input").val());
-            $.ajax({
-                url: "/them-don-gia",
-                type: "POST",
-                dataType: "json",
-                data:{
-                    "gia":gia,
-                    "ghiChu":ghiChu
+        //Thêm đơn giá
+        $(function () {
+            $("#add_form").validate({
+                rules: {
+                    addGia_input: {
+                        required: true,
+                        checkChar: "[0-9]+",
+                        minlength: 4,
+                        maxlength: 4
+                    }
+                },
+                messages: {
+                    addGia_input: {
+                        required: "Vui lòng nhập đơn giá",
+                        checkChar: "Đơn giá kí tự 0->9",
+                        minlength: "Đơn giá có 4 chữ số",
+                        maxlength: "Đơn giá có 4 chữ số"
+                    }
+                },
+                submitHandler: function () {
+                    var gia = $('#addGia_input').val().trim();
+                    var ghiChu = $("#addGhiChu_select option:selected").text().trim();
+                    $.ajax({
+                        url: "/them-don-gia",
+                        type: "POST",
+                        data: {
+                            "gia": gia,
+                            "ghiChu": ghiChu
+                        },
+                        success: function (data) {
+                            $('#success_status').text(data);
+                            $('#SuccessModalSendMail').modal('show');
+                            showDonGia();
+                            $('#addGia_input').val('');
+                        },
+                        error: function (data) {
+                            $('#error_status').text(data.responseText);
+                            $('#ErrorModal').modal('show');
+                        }
+                    });
                 }
             });
-            location.reload();
+        })
+
+        //Sửa đơn giá
+        $(function () {
+            $("#edit_form").validate({
+                rules: {
+                    gia_update: {
+                        required: true,
+                        checkChar: "[0-9]+",
+                        minlength: 4,
+                        maxlength: 4
+                    }
+                },
+                messages: {
+                    gia_update: {
+                        required: "Vui lòng nhập đơn giá",
+                        checkChar: "Đơn giá kí tự 0->9",
+                        minlength: "Đơn giá có 4 chữ số",
+                        maxlength: "Đơn giá có 4 chữ số"
+                    }
+                },
+                submitHandler: function () {
+                    var idDonGia = $("#ID_donGia_update").text();
+                    var giaMoi = $("#gia_update").val();
+                    $.ajax({
+                        url: "/cap-nhat-don-gia",
+                        type: "POST",
+                        data: {
+                            "idDonGia": idDonGia,
+                            "giaMoi": giaMoi
+                        },
+                        success: function (data) {
+                            $('#updateModal').modal('hide');
+                            $('#success_status').text(data);
+                            $('#SuccessModalSendMail').modal('show');
+                            showDonGia();
+                            $('#gia_update').val('');
+                        },
+                        error: function (data) {
+                            $('#error_status').text(data.responseText);
+                            $('#ErrorModal').modal('show');
+                        }
+                    });
+                }
+            });
+        })
+
+        function showConfirmDelete() {
+            $('#bang_don_gia_dien').find('tr').click(function () {
+                var idDonGiaDelete = $(this).find('td').eq(1).text();
+                var giaDelete = $(this).find('td').eq(2).text();
+                var ghiChuDelete = $(this).find('td').eq(3).text();
+                $("#ID_DonGia_Delete").html(idDonGiaDelete);
+                $("#gia_DonGia_Delete").html(giaDelete);
+                $("#ghiChu_DonGia_Delete").html(ghiChuDelete);
+            });
         }
-        
-        function deleteDonGia(idDonGia) {
+
+        function deleteDonGia() {
+            var idDonGia = $("#ID_DonGia_Delete").text();
             $.ajax({
                 url: "/xoa-don-gia",
                 type: "POST",
-                dataType: "json",
-                data:{
-                    "idDonGia":idDonGia
+                data: {
+                    "idDonGia": idDonGia
+                },
+                success: function (data) {
+                    $('#success_status').text(data);
+                    $('#confirmModalDelete').modal('hide');
+                    $('#SuccessModalSendMail').modal('show');
+                    showDonGia();
                 }
             });
-            location.reload();
         }
     </script>
     <div class="page-header page-header-light">
         <div class="page-header-content header-elements-md-inline" style="margin-bottom: 10px">
             <div class="page-title d-flex">
-                <h4><i class="icon-arrow-right8 mr-2"></i> <span class="font-weight-semibold">Đơn giá điện</span></h4>
+                <h4><i class="icon-arrow-right8 mr-2"></i> <span class="font-weight-semibold">Cấu hình</span> - Đơn giá
+                    điện</h4>
                 <a href="#" class="header-elements-toggle text-default d-md-none"><i class="icon-more"></i></a>
             </div>
         </div>
@@ -97,21 +196,28 @@
                     <h5 class="card-title">Thêm đơn giá</h5>
                 </div>
                 <div class="card-body">
-                    <form action="#">
+                    <form id="add_form">
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label">Đơn giá</label>
                             <div class="col-lg-9">
-                                <input type="text" class="form-control" id="addGia_input">
+                                <input class="form-control" id="addGia_input" name="addGia_input">
                             </div>
                         </div>
                         <div class="form-group row">
                             <label class="col-lg-3 col-form-label">Ghi chú</label>
                             <div class="col-lg-9">
-                                <textarea rows="5" cols="5" class="form-control" placeholder="Enter note" id="addGhiChu-input"></textarea>
+                                <select class="mt-2" id="addGhiChu_select">
+                                    <option value="1">Sinh hoạt</option>
+                                    <option value="2">Kinh Doanh</option>
+                                </select>
                             </div>
                         </div>
-                        <div class="text-right">
-                            <button type="submit" class="btn btn-primary legitRipple" style="padding: 4px 4px 4px 4px"  onclick="addDonGia()">Thêm</button>
+                        <div class="text-right justify-content-center">
+                            <button id="btn_them_don_gia" class="btn btn-primary legitRipple" data-toggle="tooltip"
+                                    title="Đã đủ số lượng đơn giá, Không được thêm nữa"
+                                    style="padding: 4px 4px 4px 4px">
+                                Thêm
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -123,15 +229,17 @@
             <!-- Vertical form -->
             <div class="card">
                 <div class="card-header header-elements-inline d-flex justify-content-center">
-                    <h5 class="card-title">Bảng giá tiền điện</h5>
+                    <h5 class="card-title">Bảng giá</h5>
                 </div>
                 <div class="card-body">
                     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
-                        <div class="datatable-scroll-wrap">
+                        <div class="datatable-scroll-wrap"
+                             style="overflow-y:scroll; max-height:400px; text-align: center;">
                             <table class="table datatable-responsive dataTable no-footer dtr-inline"
                                    id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info">
                                 <thead>
                                 <tr role="row">
+                                    <th>STT</th>
                                     <th style="padding-left: 0px    ">Mã giá</th>
                                     <th>Giá</th>
                                     <th>Ghi chú</th>
@@ -153,8 +261,8 @@
                 <div class="modal-content bg-success-600">
                     <div class="modal-header">
                         <h5 class="modal-title"
-                            style="margin-top: 32px;  margin-bottom: 43px;line-height: 1.5385;margin-left: 48px;">Thành
-                            công!</h5>
+                            style="margin-top: 32px;  margin-bottom: 43px;line-height: 1.5385;margin-left: 48px;"
+                            id="success_status"></h5>
                         <svg id="successAnimation" class="animated" xmlns="http://www.w3.org/2000/svg" width="70"
                              height="70" viewBox="0 0 70 70">
                             <path id="successAnimationResult" fill="#D8D8D8"
@@ -164,6 +272,75 @@
                             <polyline id="successAnimationCheck" stroke="#979797" stroke-width="2"
                                       points="23 34 34 43 47 27" fill="transparent"/>
                         </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="updateModal" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header d-flex justify-content-end mr-3">
+                        <h5 class="modal-title">Cập nhật giá điện</h5>
+                    </div>
+                    <form id="edit_form">
+                        <div class="modal-body">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Mã đơn giá:<label id="ID_donGia_update"
+                                                                          style="margin-left: 32px "></label></h5>
+                            </div>
+                            <div class="modal-header">
+                                <h5 class="modal-title"><label>Giá: <input id="gia_update" name="gia_update"
+                                                                           style="margin-left: 32px"></label></h5>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-info">Cập nhật</button>
+                            <button class="btn btn-danger" data-dismiss="modal">Hủy</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="confirmModalDelete" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title" style="color: red; font-weight: bold">Bạn muốn xóa đơn giá này ?</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div style="display: flex">
+                            <h5 class="modal-title" style="margin-right: 30px">Mã đơn giá:</h5>
+                            <h5 id="ID_DonGia_Delete"></h5>
+                        </div>
+                        <div style="display: flex">
+                            <h5 class="modal-title" style="margin-right: 80px">Giá:</h5>
+                            <h5 id="gia_DonGia_Delete"></h5>
+                        </div>
+                        <div style="display: flex">
+                            <h5 class="modal-title" style="margin-right: 30px">Ghi chú:</h5>
+                            <h5 id="ghiChu_DonGia_Delete"></h5>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" onclick="deleteDonGia()">Xóa</button>
+                        <button type="button" class="btn btn-info" data-dismiss="modal">Hủy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="ErrorModal" tabindex="-1" role="dialog"
+             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content bg-warning">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="error_status"
+                            style="margin-top: 32px;  margin-bottom: 43px;line-height: 1.5385;margin-left: 48px;"></h5>
+                        <i class="icon-warning" style="font-size: 70px; margin-right: 54px;"></i>
                     </div>
                 </div>
             </div>

@@ -20,14 +20,40 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9bd34c5e-83d7-4cdb-a246-c27ab66ce9eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/electricbill.iml" beforeDir="false" afterPath="$PROJECT_DIR$/waterBill.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/ElectricbillApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/controller/CheckUserListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/controller/CheckUserListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/controller/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/controller/ConfigController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/controller/SendMailController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/controller/SendMailController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/dao/DonGiaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/dao/DonGiaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/dao/KhachHangDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/dao/KhachHangDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/dao/impl/DonGiaDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/dao/impl/DonGiaDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/dao/impl/KhachHangDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/dao/impl/KhachHangDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/model/DonGia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/model/DonGia.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/model/KhachHang.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/model/KhachHang.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ptit/waterbill/service/MailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ptit/water_bill/service/MailService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/donGiaDien.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/donGiaDien.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/layout/template.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/layout/template.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/userList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/ptit/waterbill/ElectricbillApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/ElectricbillApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/controller/CheckUserListController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/controller/ConfigController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/controller/SendMailController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/dao/DonGiaDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/dao/KhachHangDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/dao/impl/DonGiaDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/dao/impl/KhachHangDAOImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/model/DonGia.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/model/KhachHang.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/service/MailService$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/ptit/waterbill/service/MailService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/donGiaDien.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/donGiaDien.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userList.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/ptit/waterbill/ElectricbillApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,12 +78,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RunManager">
     <configuration name="ElectricbillApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="waterBill" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptit.waterbill.ElectricbillApplication" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptit.water_bill.MainApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -76,7 +106,7 @@
       <workItem from="1585065524980" duration="5255000" />
       <workItem from="1585101715738" duration="913000" />
       <workItem from="1591011388878" duration="1536000" />
-      <workItem from="1591020306468" duration="318000" />
+      <workItem from="1591020306468" duration="11760000" />
     </task>
     <servers />
   </component>
@@ -96,41 +126,61 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="166" key="GridCell.Tab.0.bottom" timestamp="1591020463952">
+    <state x="163" y="0" key="#Project_Structure" timestamp="1591026164908">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="166" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
-    <state width="1323" height="166" key="GridCell.Tab.0.center" timestamp="1591020463952">
+    <state x="163" y="0" key="#Project_Structure/0.0.1366.738@0.0.1366.738" timestamp="1591026164908" />
+    <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1591021019744">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="166" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
-    <state width="1323" height="166" key="GridCell.Tab.0.left" timestamp="1591020463951">
+    <state x="137" y="23" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.738@0.0.1366.738" timestamp="1591021019744" />
+    <state x="412" y="158" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1591021016482">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="166" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1591020463951" />
-    <state width="1323" height="166" key="GridCell.Tab.0.right" timestamp="1591020463952">
+    <state x="412" y="158" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1366.738@0.0.1366.738" timestamp="1591021016482" />
+    <state width="1323" height="258" key="GridCell.Tab.0.bottom" timestamp="1591032009223">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="166" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
-    <state width="1323" height="166" key="GridCell.Tab.1.bottom" timestamp="1591020463953">
+    <state width="1323" height="258" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1591032009223" />
+    <state width="1323" height="258" key="GridCell.Tab.0.center" timestamp="1591032009223">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="166" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1591020463953" />
-    <state width="1323" height="166" key="GridCell.Tab.1.center" timestamp="1591020463952">
+    <state width="1323" height="258" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1591032009223" />
+    <state width="1323" height="258" key="GridCell.Tab.0.left" timestamp="1591032009223">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="166" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
-    <state width="1323" height="166" key="GridCell.Tab.1.left" timestamp="1591020463952">
+    <state width="1323" height="258" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1591032009223" />
+    <state width="1323" height="258" key="GridCell.Tab.0.right" timestamp="1591032009223">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="166" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
-    <state width="1323" height="166" key="GridCell.Tab.1.right" timestamp="1591020463952">
+    <state width="1323" height="258" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1591032009223" />
+    <state width="1323" height="258" key="GridCell.Tab.1.bottom" timestamp="1591032009223">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="166" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
+    <state width="1323" height="258" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1591032009223" />
+    <state width="1323" height="258" key="GridCell.Tab.1.center" timestamp="1591032009223">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1591032009223" />
+    <state width="1323" height="258" key="GridCell.Tab.1.left" timestamp="1591032009223">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1591032009223" />
+    <state width="1323" height="258" key="GridCell.Tab.1.right" timestamp="1591032009223">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state width="1323" height="258" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1591032009223" />
     <state x="391" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1585101727170">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="391" y="196" key="com.intellij.ide.util.TipDialog/0.0.1366.738@0.0.1366.738" timestamp="1585101727170" />
+    <state x="65" y="0" key="new project wizard" timestamp="1591024940823">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="65" y="0" key="new project wizard/0.0.1366.738@0.0.1366.738" timestamp="1591024940823" />
+    <state x="339" y="22" width="670" height="676" key="search.everywhere.popup" timestamp="1591031824303">
+      <screen x="0" y="0" width="1366" height="738" />
+    </state>
+    <state x="339" y="22" width="670" height="676" key="search.everywhere.popup/0.0.1366.738@0.0.1366.738" timestamp="1591031824303" />
   </component>
 </project>
