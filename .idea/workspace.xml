@@ -1,16 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="9bd34c5e-83d7-4cdb-a246-c27ab66ce9eb" name="Default Changelist" comment="" />
+    <list default="true" id="9bd34c5e-83d7-4cdb-a246-c27ab66ce9eb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/electricbill.iml" beforeDir="false" afterPath="$PROJECT_DIR$/waterBill.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/userList.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/userList.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Za7nll9FeMLwqZeqfPyzEgCil5" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -19,6 +48,7 @@
     <property name="RequestMappingsPanelWidth0" value="75" />
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -26,8 +56,8 @@
   </component>
   <component name="RunManager">
     <configuration name="ElectricbillApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="electricbill" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptit.electricbill.ElectricbillApplication" />
+      <module name="waterBill" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ptit.waterbill.ElectricbillApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -45,45 +75,59 @@
       <updated>1585065520128</updated>
       <workItem from="1585065524980" duration="5255000" />
       <workItem from="1585101715738" duration="913000" />
+      <workItem from="1591011388878" duration="1536000" />
+      <workItem from="1591020306468" duration="318000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1323" height="194" key="GridCell.Tab.0.bottom" timestamp="1585103833714">
+    <state width="1323" height="166" key="GridCell.Tab.0.bottom" timestamp="1591020463952">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1585103833714" />
-    <state width="1323" height="194" key="GridCell.Tab.0.center" timestamp="1585103833714">
+    <state width="1323" height="166" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
+    <state width="1323" height="166" key="GridCell.Tab.0.center" timestamp="1591020463952">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1585103833714" />
-    <state width="1323" height="194" key="GridCell.Tab.0.left" timestamp="1585103833714">
+    <state width="1323" height="166" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
+    <state width="1323" height="166" key="GridCell.Tab.0.left" timestamp="1591020463951">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1585103833714" />
-    <state width="1323" height="194" key="GridCell.Tab.0.right" timestamp="1585103833714">
+    <state width="1323" height="166" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1591020463951" />
+    <state width="1323" height="166" key="GridCell.Tab.0.right" timestamp="1591020463952">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1585103833714" />
-    <state width="1323" height="194" key="GridCell.Tab.1.bottom" timestamp="1585103833716">
+    <state width="1323" height="166" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
+    <state width="1323" height="166" key="GridCell.Tab.1.bottom" timestamp="1591020463953">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1585103833716" />
-    <state width="1323" height="194" key="GridCell.Tab.1.center" timestamp="1585103833716">
+    <state width="1323" height="166" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1591020463953" />
+    <state width="1323" height="166" key="GridCell.Tab.1.center" timestamp="1591020463952">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1585103833716" />
-    <state width="1323" height="194" key="GridCell.Tab.1.left" timestamp="1585103833716">
+    <state width="1323" height="166" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
+    <state width="1323" height="166" key="GridCell.Tab.1.left" timestamp="1591020463952">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1585103833716" />
-    <state width="1323" height="194" key="GridCell.Tab.1.right" timestamp="1585103833716">
+    <state width="1323" height="166" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
+    <state width="1323" height="166" key="GridCell.Tab.1.right" timestamp="1591020463952">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
-    <state width="1323" height="194" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1585103833716" />
+    <state width="1323" height="166" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1591020463952" />
     <state x="391" y="196" key="com.intellij.ide.util.TipDialog" timestamp="1585101727170">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
